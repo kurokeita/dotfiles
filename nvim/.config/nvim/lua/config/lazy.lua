@@ -39,7 +39,7 @@ require("lazy").setup({
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
-  }, -- automatically check for plugin updates
+  },                -- automatically check for plugin updates
   performance = {
     rtp = {
       -- disable some rtp plugins
@@ -130,6 +130,8 @@ require("lazy").setup({
         "stylua",
         "shfmt",
         "markdown-toc",
+        -- Git
+        "gitui",
       },
     },
     ---@param opts MasonSettings | {ensure_installed: string[]}
@@ -145,7 +147,7 @@ require("lazy").setup({
           })
         end, 100)
       end)
-  
+
       mr.refresh(function()
         for _, tool in ipairs(opts.ensure_installed) do
           local p = mr.get_package(tool)
